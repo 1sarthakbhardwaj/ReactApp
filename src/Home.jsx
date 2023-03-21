@@ -1,25 +1,40 @@
 import { useState } from "react";
 
 const Home = () => {
-    // let name = 'sujan';
-   const[name, setName] = useState('Suja');
-   const[age, setAge] = useState(18);
+    const [blogs, setBlogs] = useState([
+        {
+            title: "React patterns",
+            author: "Michael Chan",
+            url: "https://reactpatterns.com/",
+            likes: 7,
+        },
 
-    const handleClick = () => {
-       setName('Suju bhai')
-       setAge(20);
-    }
+        {
+            title: "Go To Statement Considered Harmful",
+            author: "Edsger W. Dijkstra",
+            url: "http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
+            likes: 5,
+        },
 
-    const handleDClick = () => {
-        setName('Suja');
-        setAge(81);
-     }
-
+        {
+            title: "Canonical string reduction",
+            author: "Edsger W. Dijkstra",
+            url: "http://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD808.html",
+            likes: 12,
+        }
+    ]);
     return ( 
         <div className="home">
             <h1>Homepage</h1>
-            <h3>{name} is {age} years old</h3>
-            <button onClick={handleClick} onDoubleClick = {handleDClick}>Click Me</button>
+            <div className="blog-list">
+                {blogs.map((blog) => (
+                    <div className="blog-preview" key={blog.likes}>
+                        <h2>{blog.title}</h2>
+                        <p>Written by {blog.author}</p>
+                        <a href={blog  .url}>View</a>
+                    </div>
+                ))}
+            </div>
         </div>
      );
 }
