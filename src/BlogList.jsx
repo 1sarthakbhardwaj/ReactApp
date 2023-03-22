@@ -8,7 +8,8 @@ const BlogList = ({blogs, title, handleDelete}) => {
                 <h2>{blog.title}</h2>
                 <p>Written by {blog.author}</p>
                 <a href={blog  .url}>View</a>
-                <button onClick={() => handleDelete(blog.id)}></button>
+                <br />
+                <button onClick={() => handleDelete(blog.id)}>Delete Blog</button>
             </div>
         ))}
         </div>
