@@ -28,6 +28,7 @@ const Home = () => {
         <div className="home"> 
                  {/* Props */}
             <BlogList blogs={blogs} title = {"Nomadev Blogs"}/>
+            <BlogList blogs={blogs.filter((blog) => blog.author ==='Edsger W. Dijkstra')} title = {"KAllu Blogs"}/>
             </div>
      );
 }
